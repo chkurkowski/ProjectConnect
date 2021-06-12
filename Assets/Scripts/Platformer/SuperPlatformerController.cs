@@ -18,7 +18,7 @@ public class SuperPlatformerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            //break back into 2 parts
+            Split();
         }
 
         if (Input.GetAxis("Fire1") != 0 || Input.GetAxis("Fire2") != 0)
@@ -68,4 +68,53 @@ public class SuperPlatformerController : MonoBehaviour
             canJump = true;
         }
     }
+
+    public void Activate()
+    {
+        GameObject Player1Cam = GameObject.FindGameObjectWithTag("Player1Cam");
+        GameObject Player2Cam = GameObject.FindGameObjectWithTag("Player2Cam");
+        GameObject FullBodyCam = GameObject.FindGameObjectWithTag("FullBodyCam");
+        GameObject divider = GameObject.FindGameObjectWithTag("Divider");
+
+        Player1Cam.SetActive(false);
+        Player2Cam.SetActive(false);
+
+        FullBodyCam.SetActive(true);
+
+        FullBodyCam.GetComponent<CameraFollow>().SetTarget(transform);
+
+        divider.SetActive(false);
+    }
+
+    public void Split()
+    {
+        GameObject Torso = ObjectPooler.instance.SpawnFromPool("Torso", transform.position, Quaternion.identity);
+        GameObject Legs = ObjectPooler.instance.SpawnFromPool("Legs", transform.position, Quaternion.identity);
+
+        GameObject Player1Cam = GameObject.FindGameObjectWithTag("Player1Cam");
+
+        Player1Cam.GetComponent<CameraFollow>().SetTarget(Torso.transform);
+
+        GameObject Player2Cam = GameObject.FindGameObjectWithTag("Player2Cam");
+        Player2Cam.GetComponent<CameraFollow>().SetTarget(Legs.transform);
+
+
+        GameObject FullBodyCam = GameObject.FindGameObjectWithTag("FullBodyCam");
+        GameObject divider = GameObject.FindGameObjectWithTag("Divider");
+
+        Player1Cam.SetActive(true);
+        Player2Cam.SetActive(true);
+
+        FullBodyCam.SetActive(false);
+
+        //FullBodyCam.GetComponent<CameraFollow>().SetTarget(transform);
+
+        divider.SetActive(true);
+
+
+
+        //Spawn Right Goober
+    }
+
+
 }
