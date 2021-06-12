@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
     public float fireRate = 10f;
     private float currentTimer = 0f;
+
+    private static int numberPushing = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -49,20 +52,45 @@ public class PlayerController : MonoBehaviour
     {
         // child this object to the other object
 
-        if (collision.gameObject.transform.parent != this.gameObject.transform && Input.GetKey(KeyCode.Space) && collision.tag == "Moveable")
+        if (collision.gameObject.transform.parent != this.gameObject.transform && Input.GetKey(KeyCode.Space))
         {
-            collision.gameObject.transform.parent = this.gameObject.transform;
+            if(collision.tag == "Heavy" && numberPushing >= 2)
+            {
+                collision.gameObject.transform.parent = this.gameObject.transform;
+            }
+            else if(collision.tag == "Moveable")
+            {
+                collision.gameObject.transform.parent = this.gameObject.transform;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if(col.tag == "Heavy")
+        {
+            numberPushing++;
+            if(numberPushing > 2)
+            {
+                numberPushing = 2;
+            }
+        }
 
-        Debug.Log("Hitting: " + col.name);
-
-        if(col.gameObject.tag == "Teleporter")
+        if(col.tag == "Teleporter")
         {
             transform.position = col.GetComponent<Teleporter>().RendernDropOffLocation().position;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.tag == "Heavy")
+        {
+            numberPushing--;
+            if(numberPushing < 0)
+            {
+                numberPushing = 0;
+            }
         }
     }
 

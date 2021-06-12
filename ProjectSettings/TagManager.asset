@@ -8,6 +8,8 @@ TagManager:
   - Death
   - Enemy
   - Floor
+  - Teleporter
+  - Heavy
   layers:
   - Default
   - TransparentFX
