@@ -11,7 +11,7 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dropOff = transform.GetChild(0);
+        dropOff = transform.parent.GetChild(1);
     }
 
     public Transform RendernDropOffLocation()
