@@ -1220,10 +1220,25 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.3446074
       objectReference: {fileID: 0}
+    - target: {fileID: 5341281476819443389, guid: be8d924fddfe4dc4783d26ef22bdd74b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341281476819443389, guid: be8d924fddfe4dc4783d26ef22bdd74b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9142435
+      objectReference: {fileID: 0}
     - target: {fileID: 5341281476819443391, guid: be8d924fddfe4dc4783d26ef22bdd74b,
         type: 3}
       propertyPath: m_Name
       value: moveableWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341281476819443391, guid: be8d924fddfe4dc4783d26ef22bdd74b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Heavy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8d924fddfe4dc4783d26ef22bdd74b, type: 3}
@@ -1972,6 +1987,21 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.3446074
       objectReference: {fileID: 0}
+    - target: {fileID: 5341281476819443389, guid: be8d924fddfe4dc4783d26ef22bdd74b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341281476819443389, guid: be8d924fddfe4dc4783d26ef22bdd74b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9142435
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341281476819443389, guid: be8d924fddfe4dc4783d26ef22bdd74b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5341281476819443390, guid: be8d924fddfe4dc4783d26ef22bdd74b,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -1986,6 +2016,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: moveableWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341281476819443391, guid: be8d924fddfe4dc4783d26ef22bdd74b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Heavy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8d924fddfe4dc4783d26ef22bdd74b, type: 3}

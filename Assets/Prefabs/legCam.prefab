@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7595982713845349990}
   - component: {fileID: 7595982713845349991}
-  - component: {fileID: 7595982713845350009}
   - component: {fileID: 7595982713845350008}
   m_Layer: 0
   m_Name: legCam
@@ -76,14 +75,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7595982713845350009
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7595982713845350010}
-  m_Enabled: 1
 --- !u!114 &7595982713845350008
 MonoBehaviour:
   m_ObjectHideFlags: 0
