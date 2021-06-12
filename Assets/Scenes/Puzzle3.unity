@@ -850,8 +850,8 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -876,11 +876,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c240df1670d23f4ea639780a893bb2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 88be4f9415a7171458a3cc2244d90555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1692080010}
-  smoothSpeed: 0.025
+  smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: -10}
 --- !u!20 &519420031
 Camera:
@@ -2924,8 +2924,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1812535185}
   - component: {fileID: 1812535184}
-  - component: {fileID: 1812535183}
   - component: {fileID: 1812535182}
+  - component: {fileID: 1812535183}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -2950,11 +2950,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1812535181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c240df1670d23f4ea639780a893bb2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 88be4f9415a7171458a3cc2244d90555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1184420914}
-  smoothSpeed: 0.025
+  smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: -10}
 --- !u!20 &1812535184
 Camera:
