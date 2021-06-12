@@ -55,6 +55,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+        Debug.Log("Hitting: " + col.name);
+
+        if(col.gameObject.tag == "Teleporter")
+        {
+            transform.position = col.GetComponent<Teleporter>().RendernDropOffLocation().position;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Death" || collision.gameObject.tag == "Enemy")
