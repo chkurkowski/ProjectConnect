@@ -13,6 +13,8 @@ public class PlatformerController : MonoBehaviour
 
     private bool canJump = true;
 
+    public bool isTorso;
+
 
 
 
@@ -48,6 +50,16 @@ public class PlatformerController : MonoBehaviour
         if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.Space))
         {
             gameObject.SetActive(false);
+
+            //activate super player
+
+            if (isTorso)
+            {
+                GameObject bodyObject = ObjectPooler.instance.SpawnFromPool("FullBody", transform.position, Quaternion.identity);
+
+                bodyObject.GetComponent<SuperPlatformerController>().Activate();
+            }
+            
         }
     }
 }

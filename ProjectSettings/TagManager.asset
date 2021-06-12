@@ -8,8 +8,11 @@ TagManager:
   - Death
   - Enemy
   - Floor
-  - Teleporter
-  - Heavy
+  - Player1Cam
+  - Player2Cam
+  - FullBodyCam
+  - Divider
+  - SceneManager
   layers:
   - Default
   - TransparentFX
