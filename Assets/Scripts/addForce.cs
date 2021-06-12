@@ -36,4 +36,23 @@ public class addForce : MonoBehaviour
         Vector2 launchR = new Vector2 (30,30);
         m_Rigidbody.AddForce (launchR * launchForce);
     }
+      private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Moveable" && collision.transform.parent != this.gameObject)
+        {
+            collision.transform.parent = this.gameObject.transform;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).tag == "Moveable")
+            {
+                transform.GetChild(i).transform.eulerAngles = new Vector3(0f, 0f, transform.GetChild(i).eulerAngles.z);
+            }
+            
+        }
+    }
 }
