@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public float bulletDistance = 30f;
     private float currentTimer = 0f;
 
-    private float maxRange = 10f;
+    //private float maxRange = 10f;
 
     // Start is called before the first frame update
     public void setSpeed(Vector2 newDirection)

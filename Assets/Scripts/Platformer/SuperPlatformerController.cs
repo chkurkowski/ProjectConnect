@@ -81,7 +81,7 @@ public class SuperPlatformerController : MonoBehaviour
 
         FullBodyCam.SetActive(true);
 
-        FullBodyCam.GetComponent<CameraFollow>().SetTarget(transform);
+        //FullBodyCam.GetComponent<CameraFollow>().SetTarget(transform);
 
         divider.SetActive(false);
     }
@@ -93,10 +93,10 @@ public class SuperPlatformerController : MonoBehaviour
 
         GameObject Player1Cam = GameObject.FindGameObjectWithTag("Player1Cam");
 
-        Player1Cam.GetComponent<CameraFollow>().SetTarget(Torso.transform);
+        //Player1Cam.GetComponent<CameraFollow>().SetTarget(Torso.transform);
 
         GameObject Player2Cam = GameObject.FindGameObjectWithTag("Player2Cam");
-        Player2Cam.GetComponent<CameraFollow>().SetTarget(Legs.transform);
+        //Player2Cam.GetComponent<CameraFollow>().SetTarget(Legs.transform);
 
 
         GameObject FullBodyCam = GameObject.FindGameObjectWithTag("FullBodyCam");
