@@ -13,6 +13,8 @@ TagManager:
   - FullBodyCam
   - Divider
   - SceneManager
+  - Teleporter
+  - Heavy
   layers:
   - Default
   - TransparentFX
