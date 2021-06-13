@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             foreach(GameObject gm in pushing)
             {
-                gm.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+                gm.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             }
 
             pushing.Clear();
@@ -110,12 +110,14 @@ public class PlayerController : MonoBehaviour
                 if(adjacentToHeavy[0] == adjacentToHeavy[1] && !pushing.Contains(collision.gameObject))
                 {
                     pushing.Add(collision.gameObject);
+                    collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                     Debug.Log(pushing.Count);
                 }
             }
             else if(collision.tag == "Moveable" && !pushing.Contains(collision.gameObject))
             {
                 pushing.Add(collision.gameObject);
+                collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 Debug.Log(pushing.Count);
             }
         }
