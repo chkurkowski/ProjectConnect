@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
     public float fireRate = 10f;
     private float currentTimer = 0f;
+    float vertical;
+    float horizontal;
+
 
     private static List<GameObject> pushing = new List<GameObject>();
 
@@ -22,7 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime);
+        //transform.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime);
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -43,8 +46,27 @@ public class PlayerController : MonoBehaviour
         }
 
         currentTimer += Time.deltaTime * fireRate;
+    }
 
-      
+    void FixedUpdate()
+    {
+        Movement();
+    }
+
+    private void Movement()
+    {
+        vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
+
+        if(Mathf.Abs(horizontal) > Mathf.Abs(vertical))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * horizontal, 0);
+        }
+        else if(Mathf.Abs(vertical) > Mathf.Abs(horizontal))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, moveSpeed * vertical);
+        }
+        
     }
 
     void Fire()
