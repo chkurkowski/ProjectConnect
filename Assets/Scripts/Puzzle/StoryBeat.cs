@@ -16,6 +16,8 @@ public class StoryBeat : MonoBehaviour
 
     private GameObject[] players;
 
+    public GameObject PauseMenu;
+
     private void Awake()
     {
         if (!instance)
@@ -126,6 +128,14 @@ public class StoryBeat : MonoBehaviour
 
             //getNextStoryBeat().SetActive(false);
 
+
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            DisablePlayerMovement();
+            PauseMenu.SetActive(true);
         }
     }
 }

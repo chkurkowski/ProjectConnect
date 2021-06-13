@@ -16,4 +16,9 @@ public class ChangeScenes : MonoBehaviour
     {
         SceneManager.LoadScene(nextScene);
     }
+
+    public void LoadSpecificiScene(string newScene)
+    {
+        SceneManager.LoadScene(newScene);
+    }
 }
