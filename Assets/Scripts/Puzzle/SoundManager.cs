@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 using System;
 
 public class SoundManager : MonoBehaviour
@@ -11,6 +11,10 @@ public class SoundManager : MonoBehaviour
     public Sound[] music;
 
     public Sound[] sounds;
+
+    public AudioMixerGroup musicGroup;
+
+    public AudioMixerGroup soundGroup; 
 
     private void Awake()
     {
@@ -30,37 +34,25 @@ public class SoundManager : MonoBehaviour
             s.source.volume = s.volume;
 
             s.source.pitch = s.pitch;
+
+            s.source.outputAudioMixerGroup = soundGroup;
         }
 
         foreach(Sound s in music)
         {
-           s.source = gameObject.AddComponent<AudioSource>();
+            s.source = gameObject.AddComponent<AudioSource>();
 
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
 
             s.source.pitch = s.pitch;
+
+            s.source.outputAudioMixerGroup = musicGroup;
         }
 
-        
+        PlayMusic("Menu");
 
-    }
-
-    private void OnEnable()
-    {
-        Sound wanderer = Array.Find(sounds, Sound => Sound.name == "HeadlessWanderer");
-
-        if(SceneManager.GetActiveScene().name == "Main Menu")
-        {
-            StopAllMusic();
-            PlayMusic("Menu");
-        }
-        else if(wanderer.source.isPlaying && SceneManager.GetActiveScene().name != "Main Menu")
-        {
-            StopAllMusic();
-            PlayMusic("Game");
-        }
     }
 
     public void PlaySound(string soundName)
@@ -87,6 +79,7 @@ public class SoundManager : MonoBehaviour
     {
         Sound m = Array.Find(music, Sound => Sound.name == soundName);
         m.source.Play();
+        Debug.Log(m.source);
     }
 
     public void StopMusic(string soundName)
