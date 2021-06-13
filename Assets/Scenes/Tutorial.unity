@@ -644,7 +644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: However, I can only transmit one signal to all of your limbs, so they will
-    move identially.
+    move identically.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62be0d53338efb345bd428ef8b8809a2, type: 2}
   m_sharedMaterial: {fileID: 6472771452833565790, guid: 62be0d53338efb345bd428ef8b8809a2,
