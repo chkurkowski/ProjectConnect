@@ -10,9 +10,8 @@ public class PlayerController : MonoBehaviour
     private float currentTimer = 0f;
     float vertical;
     float horizontal;
-
-
     private static List<GameObject> pushing = new List<GameObject>();
+    private static List<GameObject> adjacentToHeavy = new List<GameObject>();
 
     public enum playerTypes
     {
@@ -29,10 +28,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            for(int i = 0; i < transform.childCount; i++)
-            {
-                transform.GetChild(i).parent = null;
-            }
+            pushing.Clear();
         }
 
         if (Input.GetAxis("Fire1") != 0 || Input.GetAxis("Fire2") != 0)
@@ -66,6 +62,26 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, moveSpeed * vertical);
         }
+        else if(vertical == 0 && horizontal == 0)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
+
+        foreach(GameObject gm in pushing)
+        {
+            if(Mathf.Abs(horizontal) > Mathf.Abs(vertical))
+            {
+                gm.GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * horizontal, 0);
+            }
+            else if(Mathf.Abs(vertical) > Mathf.Abs(horizontal))
+            {
+                gm.GetComponent<Rigidbody2D>().velocity = new Vector2(0, moveSpeed * vertical);
+            }
+            else if(vertical == 0 && horizontal == 0)
+            {
+                gm.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            }
+        }
         
     }
 
@@ -84,16 +100,18 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.transform.parent != this.gameObject.transform && Input.GetKey(KeyCode.Space))
         {
-            if(collision.tag == "Heavy" && pushing.Count >= 2)
+            if(collision.tag == "Heavy" && adjacentToHeavy.Count >= 2)
             {
-                if(pushing[0] == pushing[1])
+                if(adjacentToHeavy[0] == adjacentToHeavy[1] && !pushing.Contains(collision.gameObject))
                 {
-                    collision.gameObject.transform.parent = this.gameObject.transform;
+                    pushing.Add(collision.gameObject);
+                    Debug.Log(pushing.Count);
                 }
             }
-            else if(collision.tag == "Moveable")
+            else if(collision.tag == "Moveable" && !pushing.Contains(collision.gameObject))
             {
-                collision.gameObject.transform.parent = this.gameObject.transform;
+                pushing.Add(collision.gameObject);
+                Debug.Log(pushing.Count);
             }
         }
     }
@@ -102,11 +120,11 @@ public class PlayerController : MonoBehaviour
     {
         if(col.tag == "Heavy")
         {
-            if(pushing.Count < 2)
+            if(adjacentToHeavy.Count < 2)
             {
-                pushing.Add(col.gameObject);
+                adjacentToHeavy.Add(col.gameObject);
             }
-            Debug.Log(pushing.Count);
+            Debug.Log(adjacentToHeavy.Count);
         }
 
         if(col.tag == "Teleporter")
@@ -119,11 +137,11 @@ public class PlayerController : MonoBehaviour
     {
         if(col.tag == "Heavy")
         {
-            if(pushing.Contains(col.gameObject))
+            if(adjacentToHeavy.Contains(col.gameObject))
             {
-                pushing.Remove(col.gameObject);
+                adjacentToHeavy.Remove(col.gameObject);
             }
-            Debug.Log(pushing.Count);
+            Debug.Log(adjacentToHeavy.Count);
         }
     }
 
