@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7730199379349820904}
   - component: {fileID: 1107834837}
   - component: {fileID: 1107834838}
+  - component: {fileID: 762718568}
   m_Layer: 0
   m_Name: torso
   m_TagString: Player
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   fireRate: 10
+  type: 0
 --- !u!61 &7730199379349820904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,4 +164,23 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.011149555, y: 0.011149555}
   serializedVersion: 2
-  m_Radius: 0.29252082
+  m_Radius: 0.325
+--- !u!95 &762718568
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730199379349820908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c77981210682d64f917c0b98f9bb5f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
