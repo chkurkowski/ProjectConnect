@@ -21,14 +21,14 @@ public class StoryBeat : MonoBehaviour
         if (!instance)
         {
             instance = this;
-            
-           
+
+            StartStoryBeat();
         }
     }
 
     private void Start()
     {
-        StartStoryBeat();
+        //StartStoryBeat();
     }
 
 
