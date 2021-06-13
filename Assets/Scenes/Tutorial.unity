@@ -1414,7 +1414,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'If you can move your legs and torso into the ship''s ventilation system,
     I can overclock the fans to move you to the adjacent room. we will repeat this
-    process until you find your head.
+    process until you find your head. [ Use WASD to Move]
 
 
     -Rob'
