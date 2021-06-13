@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private static List<GameObject> pushing = new List<GameObject>();
     private static List<GameObject> adjacentToHeavy = new List<GameObject>();
 
+    private bool canMove = true;
+
     public enum playerTypes
     {
         torso,
@@ -51,7 +53,20 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movement();
+        if (canMove)
+        {
+            Movement();
+        }
+    }
+
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
     }
 
     private void Movement()
