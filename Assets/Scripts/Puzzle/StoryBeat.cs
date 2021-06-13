@@ -127,9 +127,6 @@ public class StoryBeat : MonoBehaviour
             }
 
             //getNextStoryBeat().SetActive(false);
-
-
-
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
