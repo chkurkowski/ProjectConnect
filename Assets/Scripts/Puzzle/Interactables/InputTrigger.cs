@@ -18,6 +18,7 @@ public class InputTrigger : MonoBehaviour
     }
 
     public InputTypes inputType;
+    public PlayerController.playerTypes requiredPlayer;
 
     private void Awake()
     {
@@ -47,7 +48,12 @@ public class InputTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            isActive = true;
+            PlayerController controller = collision.gameObject.GetComponent<PlayerController>();
+
+            if (controller.type == requiredPlayer)
+            {
+                isActive = true;
+            }
         }
     }
 
@@ -55,6 +61,7 @@ public class InputTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+
             isActive = false;
         }
     }

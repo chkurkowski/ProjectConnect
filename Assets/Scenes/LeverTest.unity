@@ -2202,12 +2202,12 @@ PrefabInstance:
     - target: {fileID: 7730199379349820910, guid: 94d9894bd7936274485dc2bca92cf495,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.45
+      value: 9.6
       objectReference: {fileID: 0}
     - target: {fileID: 7730199379349820910, guid: 94d9894bd7936274485dc2bca92cf495,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.01
+      value: -2.46
       objectReference: {fileID: 0}
     - target: {fileID: 7730199379349820910, guid: 94d9894bd7936274485dc2bca92cf495,
         type: 3}
@@ -2484,6 +2484,7 @@ MonoBehaviour:
   outputObjects:
   - {fileID: 822463305}
   inputType: 1
+  requiredPlayer: 0
 --- !u!58 &2120623992
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2653,6 +2654,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 8859368354680772676, guid: 175d531a68aa9a64cb8fe54d27247b7f,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8859368354680772677, guid: 175d531a68aa9a64cb8fe54d27247b7f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2661,12 +2667,12 @@ PrefabInstance:
     - target: {fileID: 8859368354680772677, guid: 175d531a68aa9a64cb8fe54d27247b7f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.45
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 8859368354680772677, guid: 175d531a68aa9a64cb8fe54d27247b7f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.33
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 8859368354680772677, guid: 175d531a68aa9a64cb8fe54d27247b7f,
         type: 3}

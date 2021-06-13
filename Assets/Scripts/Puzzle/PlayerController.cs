@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour
 
     private static List<GameObject> pushing = new List<GameObject>();
 
+    public enum playerTypes
+    {
+        torso,
+        legs
+    }
+
+    public playerTypes type;
+
     // Update is called once per frame
     void Update()
     {
