@@ -26578,12 +26578,12 @@ PrefabInstance:
     - target: {fileID: 8859368354680772677, guid: 175d531a68aa9a64cb8fe54d27247b7f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.52
+      value: 2.34
       objectReference: {fileID: 0}
     - target: {fileID: 8859368354680772677, guid: 175d531a68aa9a64cb8fe54d27247b7f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 8859368354680772677, guid: 175d531a68aa9a64cb8fe54d27247b7f,
         type: 3}
@@ -28075,7 +28075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3990c734c6e5d3e4d81e8ecb49c7876a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Main Menu
+  nextScene: Ending
 --- !u!4 &1110808630
 Transform:
   m_ObjectHideFlags: 0
@@ -28349,12 +28349,12 @@ PrefabInstance:
     - target: {fileID: 7730199379349820910, guid: 94d9894bd7936274485dc2bca92cf495,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.25
+      value: -2.4300003
       objectReference: {fileID: 0}
     - target: {fileID: 7730199379349820910, guid: 94d9894bd7936274485dc2bca92cf495,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 1.0400002
       objectReference: {fileID: 0}
     - target: {fileID: 7730199379349820910, guid: 94d9894bd7936274485dc2bca92cf495,
         type: 3}
