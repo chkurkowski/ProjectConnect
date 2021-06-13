@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            foreach(GameObject gm in pushing)
+            {
+                gm.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            }
+
             pushing.Clear();
         }
 
