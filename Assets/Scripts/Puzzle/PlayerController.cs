@@ -9,7 +9,15 @@ public class PlayerController : MonoBehaviour
     public float fireRate = 10f;
     private float currentTimer = 0f;
 
-    private static int numberPushing = 0;
+    private static List<GameObject> pushing = new List<GameObject>();
+
+    public enum playerTypes
+    {
+        torso,
+        legs
+    }
+
+    public playerTypes type;
 
     // Update is called once per frame
     void Update()
@@ -54,9 +62,12 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.transform.parent != this.gameObject.transform && Input.GetKey(KeyCode.Space))
         {
-            if(collision.tag == "Heavy" && numberPushing >= 2)
+            if(collision.tag == "Heavy" && pushing.Count >= 2)
             {
-                collision.gameObject.transform.parent = this.gameObject.transform;
+                if(pushing[0] == pushing[1])
+                {
+                    collision.gameObject.transform.parent = this.gameObject.transform;
+                }
             }
             else if(collision.tag == "Moveable")
             {
@@ -69,11 +80,11 @@ public class PlayerController : MonoBehaviour
     {
         if(col.tag == "Heavy")
         {
-            numberPushing++;
-            if(numberPushing > 2)
+            if(pushing.Count < 2)
             {
-                numberPushing = 2;
+                pushing.Add(col.gameObject);
             }
+            Debug.Log(pushing.Count);
         }
 
         if(col.tag == "Teleporter")
@@ -86,11 +97,11 @@ public class PlayerController : MonoBehaviour
     {
         if(col.tag == "Heavy")
         {
-            numberPushing--;
-            if(numberPushing < 0)
+            if(pushing.Contains(col.gameObject))
             {
-                numberPushing = 0;
+                pushing.Remove(col.gameObject);
             }
+            Debug.Log(pushing.Count);
         }
     }
 
