@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3990c734c6e5d3e4d81e8ecb49c7876a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Puzzle1
+  nextScene: Tutorial
 --- !u!4 &1039927596
 Transform:
   m_ObjectHideFlags: 0
