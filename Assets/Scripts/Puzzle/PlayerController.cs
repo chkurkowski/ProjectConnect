@@ -37,18 +37,6 @@ public class PlayerController : MonoBehaviour
 
             pushing.Clear();
         }
-
-        if (Input.GetAxis("Fire1") != 0 || Input.GetAxis("Fire2") != 0)
-        {
-            if (currentTimer >= 100f)
-            {
-                currentTimer = 0f;
-                Fire();
-            }
-
-        }
-
-        currentTimer += Time.deltaTime * fireRate;
     }
 
     void FixedUpdate()
