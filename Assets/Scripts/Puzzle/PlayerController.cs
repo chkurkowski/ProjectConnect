@@ -59,6 +59,27 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
 
+
+        if(Mathf.Abs(horizontal) > 0 || Mathf.Abs(vertical) > 0)
+        {
+            GetComponent<Animator>().Play("Run");
+        }
+        else
+        {
+            GetComponent<Animator>().Play("Idle");
+        }
+
+
+        if(horizontal < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+
         if(Mathf.Abs(horizontal) > Mathf.Abs(vertical))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * horizontal, 0);
